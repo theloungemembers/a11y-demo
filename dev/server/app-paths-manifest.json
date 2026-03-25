@@ -1,0 +1,5 @@
+{
+  "/demo/focus/page": "app/demo/focus/page.js",
+  "/demo/semantics/page": "app/demo/semantics/page.js",
+  "/page": "app/page.js"
+}

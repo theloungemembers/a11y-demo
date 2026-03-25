@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/seopyeongwon/Workspace/a11y-demo/components/dev/AxeCoreRunner.tsx"],"sourcesContent":["\"use client\";\n\nimport React, { useEffect } from \"react\";\n\nexport function AxeCoreRunner() {\n  useEffect(() => {\n    if (\n      process.env.NODE_ENV !== \"production\" &&\n      typeof window !== \"undefined\"\n    ) {\n      Promise.all([import(\"@axe-core/react\"), import(\"react-dom\")]).then(\n        ([axe, ReactDOM]) => {\n          axe.default(React, ReactDOM, 1000);\n        }\n      );\n    }\n  }, []);\n\n  return null;\n}\n"],"names":["AxeCoreRunner","Promise","all","then","axe","ReactDOM","default"],"mappings":";;;;AAOM;AALN;;AAFA;;AAIO,SAASA;;IACd,IAAA,0KAAS;mCAAC;YACR,wCAGE;gBACAC,QAAQC,GAAG,CAAC;;;iBAAgD,EAAEC,IAAI;+CAChE,CAAC,CAACC,KAAKC,SAAS;wBACdD,IAAIE,OAAO,CAAC,wKAAK,EAAED,UAAU;oBAC/B;;YAEJ;QACF;kCAAG,EAAE;IAEL,OAAO;AACT;GAfgBL;KAAAA"}}]
-}

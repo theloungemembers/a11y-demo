@@ -10,107 +10,106 @@ export default function SemanticsDemo() {
           href="/"
           className="mb-4 inline-block rounded text-sm font-medium hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-950 dark:focus-visible:ring-zinc-300"
         >
-          &larr; Back to Home
+          &larr; 홈으로 돌아가기
         </Link>
         <h1 className="mb-2 text-3xl font-bold tracking-tight">
           Semantics & Landmarks
         </h1>
         <p className="text-zinc-600 dark:text-zinc-400">
-          Testing landmarks (header, nav, main, footer) and heading hierarchy
-          structure.
+          랜드마크(header, nav, main, footer)와 헤딩 계층 구조를 테스트합니다.
         </p>
       </div>
 
-      <PageSection title="Landmarks">
+      <PageSection title="랜드마크">
         <DemoCard
-          title="Correct Landmarks"
+          title="올바른 랜드마크"
           status="good"
           statusText="Semantic HTML5"
-          description="Uses native structural elements like <header>, <main>, and <footer>."
+          description="<header>, <main>, <footer>와 같은 네이티브 구조 요소를 사용합니다."
         >
           <div className="overflow-hidden rounded-md border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-black">
             <header className="border-b border-zinc-200 bg-zinc-100 p-4 dark:border-zinc-800 dark:bg-zinc-900">
               <h2 className="text-lg font-bold">
-                App Header (<code className="text-sm">&lt;header&gt;</code>)
+                앱 헤더 (<code className="text-sm">&lt;header&gt;</code>)
               </h2>
-              <nav aria-label="Main Navigation">
+              <nav aria-label="메인 네비게이션">
                 <span className="text-sm text-zinc-500">
-                  Navigation links (<code className="text-sm">&lt;nav&gt;</code>)
+                  네비게이션 링크 (<code className="text-sm">&lt;nav&gt;</code>)
                 </span>
               </nav>
             </header>
             <main className="min-h-[100px] bg-white p-4 dark:bg-black">
-              Main Content Area (<code className="text-sm">&lt;main&gt;</code>)
+              메인 콘텐츠 영역 (<code className="text-sm">&lt;main&gt;</code>)
             </main>
             <footer className="border-t border-zinc-200 bg-zinc-100 p-4 text-sm dark:border-zinc-800 dark:bg-zinc-900">
-              App Footer (<code className="text-sm">&lt;footer&gt;</code>)
+              앱 푸터 (<code className="text-sm">&lt;footer&gt;</code>)
             </footer>
           </div>
         </DemoCard>
 
         <DemoCard
-          title="Incorrect Landmarks"
+          title="잘못된 랜드마크"
           status="bad"
           statusText="Generic <div>s"
-          description="Uses only generic container elements, providing no semantic structure for screen readers."
+          description="범용 컨테이너 요소만 사용하여, 스크린 리더에게 어떠한 시맨틱 구조도 제공하지 않습니다."
         >
           <div className="overflow-hidden rounded-md border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-black">
             <div className="border-b border-zinc-200 bg-zinc-100 p-4 dark:border-zinc-800 dark:bg-zinc-900">
               <div className="text-lg font-bold">
-                App Header (<code className="text-sm">&lt;div&gt;</code>)
+                앱 헤더 (<code className="text-sm">&lt;div&gt;</code>)
               </div>
               <div className="text-sm text-zinc-500">
-                Navigation links (<code className="text-sm">&lt;div&gt;</code>)
+                네비게이션 링크 (<code className="text-sm">&lt;div&gt;</code>)
               </div>
             </div>
             <div className="min-h-[100px] bg-white p-4 dark:bg-black">
-              Main Content Area (<code className="text-sm">&lt;div&gt;</code>)
+              메인 콘텐츠 영역 (<code className="text-sm">&lt;div&gt;</code>)
             </div>
             <div className="border-t border-zinc-200 bg-zinc-100 p-4 text-sm dark:border-zinc-800 dark:bg-zinc-900">
-              App Footer (<code className="text-sm">&lt;div&gt;</code>)
+              앱 푸터 (<code className="text-sm">&lt;div&gt;</code>)
             </div>
           </div>
         </DemoCard>
       </PageSection>
 
-      <PageSection title="Heading Hierarchy">
+      <PageSection title="헤딩 계층 구조">
         <DemoCard
-          title="Correct Hierarchy"
+          title="올바른 계층 구조"
           status="good"
-          statusText="Sequential Headings"
-          description="Headings follow a logical, sequential order (h1 -> h2 -> h3)."
+          statusText="순차적인 헤딩"
+          description="헤딩이 논리적이고 순차적인 순서(h1 -> h2 -> h3)를 따릅니다."
         >
           <div className="flex flex-col gap-2 rounded-md border border-zinc-200 p-4 dark:border-zinc-800">
             <h2 className="mb-2 border-b pb-2 text-xl font-bold">
-              Section Heading (h2)
+              섹션 제목 (h2)
             </h2>
-            <p className="mb-4 text-sm text-zinc-600 dark:text-zinc-400">Content describing the section.</p>
-            <h3 className="text-lg font-semibold">Subsection (h3)</h3>
-            <p className="mb-2 text-sm text-zinc-600 dark:text-zinc-400">Details for the subsection.</p>
-            <h4 className="text-base font-medium">Sub-subsection (h4)</h4>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400">Granular details.</p>
+            <p className="mb-4 text-sm text-zinc-600 dark:text-zinc-400">섹션을 설명하는 콘텐츠입니다.</p>
+            <h3 className="text-lg font-semibold">소목차 (h3)</h3>
+            <p className="mb-2 text-sm text-zinc-600 dark:text-zinc-400">소목차에 대한 세부 내용입니다.</p>
+            <h4 className="text-base font-medium">하위 소목차 (h4)</h4>
+            <p className="text-sm text-zinc-600 dark:text-zinc-400">구체적인 세부 정보입니다.</p>
           </div>
         </DemoCard>
 
         <DemoCard
-          title="Incorrect Hierarchy"
+          title="잘못된 계층 구조"
           status="bad"
-          statusText="Skipped Headings"
-          description="Headings skip levels, confusing screen reader navigation."
+          statusText="건너뛴 헤딩"
+          description="헤딩 레벨을 건너뛰어 스크린 리더 탐색에 혼란을 줍니다."
         >
           <div className="flex flex-col gap-2 rounded-md border border-zinc-200 p-4 dark:border-zinc-800">
             <h2 className="mb-2 border-b pb-2 text-xl font-bold">
-              Section Heading (h2)
+              섹션 제목 (h2)
             </h2>
-            <p className="mb-4 text-sm text-zinc-600 dark:text-zinc-400">Content describing the section.</p>
+            <p className="mb-4 text-sm text-zinc-600 dark:text-zinc-400">섹션을 설명하는 콘텐츠입니다.</p>
             {/* Intentionally skipped h3 */}
             <h4 className="text-lg font-semibold">
-              Subsection styled like h3 but is h4 (h4)
+              h3처럼 스타일되었지만 실제로는 h4인 소목차 (h4)
             </h4>
-            <p className="mb-2 text-sm text-zinc-600 dark:text-zinc-400">This is confusing to navigate by headings.</p>
+            <p className="mb-2 text-sm text-zinc-600 dark:text-zinc-400">이런 구조는 헤딩 단위 탐색 시 혼란스럽습니다.</p>
             {/* Intentionally using h6 for something that should be h3 */}
             <h6 className="text-base font-medium">
-              Random h6 used just for its font size
+              폰트 크기 조절만을 위해 무작위로 쓰인 h6
             </h6>
           </div>
         </DemoCard>

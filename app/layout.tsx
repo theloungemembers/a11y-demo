@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "A11y Demo",
-  description: "This is a demo for accessibility.",
+  description: "웹 접근성을 테스트를 위한 데모 웹사이트입니다.",
 };
 
 export default function RootLayout({

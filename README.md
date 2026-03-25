@@ -1,59 +1,61 @@
-# Accessibility (a11y) Demo Sandbox
+# 접근성 (a11y) 데모 샌드박스
 
-A practical QA/dev sandbox built with Next.js App Router for reproducing and validating accessibility behavior, particularly in mobile app WebViews and standard browsers.
+모바일 앱 WebView와 표준 브라우저에서 접근성 동작을 재현하고 검증하기 위해 Next.js App Router로 구축된 실용적인 QA/개발 샌드박스입니다.
 
-## Purpose
+## 목적
 
-This project provides a robust, extensible testing ground for accessibility on the web. Instead of complex, abstracted theories, this project uses concrete, side-by-side examples (Good vs Bad) of common UI patterns. 
+이 프로젝트는 웹 접근성을 위한 견고하고 확장 가능한 테스트 환경을 제공합니다. 복잡하고 추상적인 이론 대신, 이 프로젝트는 일반적인 UI 패턴에 대해 나란히 비교할 수 있는 구체적인 예제(올바른 예 vs 잘못된 예)를 제공합니다.
 
-It is designed to be easily loaded into an iOS `WKWebView` or Android `WebView` to test native screen reader behavior (VoiceOver and TalkBack) on web content.
+iOS `WKWebView`나 Android `WebView`에 쉽게 로드되도록 설계되어 웹 콘텐츠에 대한 네이티브 화면 읽기 프로그램(VoiceOver 및 TalkBack)의 동작을 테스트할 수 있습니다.
 
-## How to Run Locally
+## 로컬 실행 방법
 
-1. Install dependencies:
+1. 의존성 설치:
    ```bash
    npm install
    ```
-2. Start the development server:
+2. 개발 서버 시작:
    ```bash
    npm run dev
    ```
-3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. 브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 결과를 확인하세요.
 
-**Note:** `@axe-core/react` is enabled in development mode and will log accessibility violations dynamically to your browser console.
+**참고:** 개발 모드에서는 `@axe-core/react`가 활성화되어 접근성 위반 사항을 브라우저 콘솔에 동적으로 로깅합니다.
 
-## Demo Scenarios
+## 데모 시나리오
 
-The app is broken down into focused scenarios for easy testing:
+웹 접근성 테스트를 위한 간단한 시나리오로 구성되어 있습니다:
 
-- **`/demo/semantics`**: Tests landmarks (`<header>`, `<main>`, `<footer>`) and sequential heading hierarchy.
-- **`/demo/forms`**: Tests input labels, descriptions (`aria-describedby`), error states, and required field announcements.
-- **`/demo/focus`**: Tests focus management, `tabIndex` behavior, programmatic focus movement, and logical DOM ordering.
-- **`/demo/modal`**: Tests focus trapping inside dialogs, restorative focus, and hiding underlying content from screen readers.
-- **`/demo/live-region`**: Tests dynamic announcements without focus movement using `aria-live`.
-- **`/demo/interactive-elements`**: Compares native buttons against fake clickable `div`s and the pitfalls of re-creating keyboard interaction manually.
-- **`/demo/list-and-table`**: Verifies screen reader reading order, listing contexts, and tabular data semantics.
+- **`/demo/semantics`**: 랜드마크(`<header>`, `<main>`, `<footer>`)와 순차적인 제목 계층 구조를 테스트합니다.
+- **`/demo/forms`**: 입력 레이블, 설명(`aria-describedby`), 오류 상태, 필수 필드 알림을 테스트합니다.
+- **`/demo/focus`**: 포커스 관리, `tabIndex` 동작, 프로그래밍 방식의 포커스 이동, 논리적 DOM 순서를 테스트합니다.
+- **`/demo/modal`**: 대화창 내부의 포커스 트래핑, 포커스 복원, 화면 읽기 프로그램에서 배경 콘텐츠 숨기기를 테스트합니다.
+- **`/demo/live-region`**: 포커스 이동 없이 `aria-live`를 사용하여 동적 알림을 테스트합니다.
+- **`/demo/interactive-elements`**: 네이티브 버튼과 클릭 가능한 가짜 `div`를 비교하고, 프로그래밍 방식으로 키보드 상호작용을 다시 만들 때의 문제점을 테스트합니다.
+- **`/demo/list-and-table`**: 화면 읽기 프로그램의 읽기 순서, 목록 문맥, 표 형식 데이터의 의미론을 검증합니다.
 
-## How to use in Mobile WebView QA
+## 모바일 WebView QA에서 사용하는 방법
 
-To test these scenarios in a real hybrid app:
+실제 하이브리드 앱에서 이러한 시나리오를 테스트하려면:
 
-1. **Host the app**: Expose your local server to your mobile device (e.g., using `ngrok`, your local network IP, or deploying to Vercel).
-2. **Load the URL**: Point your mobile app's WebView to the hosted URL.
-3. **Enable Screen Reader**: Turn on VoiceOver (iOS) or TalkBack (Android).
-4. **Compare Examples**: Navigate the page using standard screen reader gestures (swipe right/left to read next/previous, double tap to activate). Observe the difference in announcement and navigability between the "Correct" and "Incorrect" examples.
+1. **앱 호스팅**: 로컬 서버를 모바일 기기에 노출합니다 (예: `ngrok` 사용, 로컬 네트워크 IP 사용, 또는 Vercel에 배포).
+2. **URL 로드**: 모바일 앱의 WebView에서 호스팅된 URL을 가리키도록 설정합니다.
+3. **화면 읽기 프로그램 활성화**: VoiceOver(iOS) 또는 TalkBack(Android)을 켭니다.
+4. **예제 비교**: 표준 화면 읽기 프로그램 제스처(다음/이전을 읽으려면 오른쪽/왼쪽으로 스와이프, 활성화하려면 이중 탭)를 사용하여 페이지를 탐색합니다. "올바른 예제(Correct)"와 "잘못된 예제(Incorrect)" 사이의 알림 및 탐색 가능성의 차이를 관찰하세요.
 
-## Automated Testing vs Manual Testing
+## 자동화된 테스트 vs 수동 테스트
 
-**Automated tools** (like `eslint-plugin-jsx-a11y` or AxeCore) are great for catching low-hanging fruit:
-- Missing `alt` text
-- Invalid ARIA attributes
-- Insufficient color contrast
+**자동화된 도구**(`eslint-plugin-jsx-a11y` 또는 AxeCore 같은 도구)는 다음과 같은 쉽게 발견할 수 있는 문제를 잡는 데 훌륭합니다:
 
-**Manual testing with a screen reader** is absolutely required for:
-- Logical reading order and focus management traps
-- Contextual meaning (e.g., does the accessible name actually make sense to a human?)
-- Complex interactive widgets (custom dropdowns, comboboxes, modals)
-- WebView-specific quirks (e.g., how a fixed header might trap swipe navigation on iOS)
+- 누락된 `alt` 텍스트
+- 잘못된 ARIA 속성
+- 불충분한 색상 대비
 
-Do not assume that 0 automated violations equals an accessible application!
+**화면 읽기 프로그램을 사용한 수동 테스트**는 다음과 같은 항목에 대해 절대적으로 필요합니다:
+
+- 논리적인 읽기 순서 및 포커스 관리 트랩
+- 문맥적 의미 (예: 접근성 이름이 사람이 이해하기에 실제로 말이 되는가?)
+- 복잡한 대화형 위젯 (커스텀 드롭다운, 콤보박스, 모달)
+- WebView 특유의 문제 (예: 고정된 헤더가 iOS에서 스와이프 탐색을 방해하는 방식)
+
+**⚠️ 주의:** 자동화 도구 위반이 0개라고 해서 접근성 문제가 없는 것은 아닙니다!
